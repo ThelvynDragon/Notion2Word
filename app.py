@@ -41,7 +41,29 @@ if uploaded_file:
             docx_path = convert_zip_to_word_only(
                 f"{work_dir}/extracted", page_selection, title, author, custom_date, work_dir
             )
-               
+
+            with open(docx_path, "rb") as f_docx:
+                with open(docx_path, "rb") as f_docx:
+                with open(docx_path, "rb") as f_docx:
+                
 with open(docx_path, "rb") as f_docx:
     st.download_button("📥 Télécharger le Word", f_docx, "Notion_Document.docx")
 
+# Aperçu HTML simple du document Word
+from docx import Document
+doc = Document(docx_path)
+st.subheader("Aperçu du contenu Word")
+for para in doc.paragraphs:
+    st.markdown(f"<p>{para.text}</p>", unsafe_allow_html=True)
+
+                for para in doc.paragraphs:
+                    st.markdown(f"<p>{para.text}</p>", unsafe_allow_html=True)
+
+            # Aperçu HTML simple du document Word
+            from docx import Document
+            doc = Document(docx_path)
+            st.subheader("Aperçu du contenu Word")
+            for para in doc.paragraphs:
+                st.markdown(f"<p>{para.text}</p>", unsafe_allow_html=True)
+
+            shutil.rmtree(work_dir)
