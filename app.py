@@ -41,11 +41,7 @@ if uploaded_file:
             docx_path = convert_zip_to_word_only(
                 f"{work_dir}/extracted", page_selection, title, author, custom_date, work_dir
             )
-
-            with open(docx_path, "rb") as f_docx:
-                with open(docx_path, "rb") as f_docx:
-                with open(docx_path, "rb") as f_docx:
-                
+               
 with open(docx_path, "rb") as f_docx:
     st.download_button("📥 Télécharger le Word", f_docx, "Notion_Document.docx")
 
