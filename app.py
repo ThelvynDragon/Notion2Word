@@ -45,12 +45,17 @@ if uploaded_file:
             with open(docx_path, "rb") as f_docx:
                 with open(docx_path, "rb") as f_docx:
                 with open(docx_path, "rb") as f_docx:
-                st.download_button("📥 Télécharger le Word", f_docx, "Notion_Document.docx")
+                
+with open(docx_path, "rb") as f_docx:
+    st.download_button("📥 Télécharger le Word", f_docx, "Notion_Document.docx")
 
-                # Aperçu HTML simple du document Word
-                from docx import Document
-                doc = Document(docx_path)
-                st.subheader("Aperçu du contenu Word")
+# Aperçu HTML simple du document Word
+from docx import Document
+doc = Document(docx_path)
+st.subheader("Aperçu du contenu Word")
+for para in doc.paragraphs:
+    st.markdown(f"<p>{para.text}</p>", unsafe_allow_html=True)
+
                 for para in doc.paragraphs:
                     st.markdown(f"<p>{para.text}</p>", unsafe_allow_html=True)
 
